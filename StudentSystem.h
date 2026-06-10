@@ -4,7 +4,7 @@
 #include <queue>
 #include <vector>
 
-using namespace std; // Added as requested
+using namespace std;
 
 class StudentSystem {
 private:
