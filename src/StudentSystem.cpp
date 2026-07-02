@@ -135,8 +135,8 @@ void StudentSystem::sortStudents() {
         temp = temp->next;
     }
 
-    for (int i = 0; i < students.size() - 1; i++) {
-        for (int j = 0; j < students.size() - i - 1; j++) {
+    for (size_t i = 0; i < students.size() - 1; i++) {
+        for (size_t j = 0; j < students.size() - i - 1; j++) {
             if (students[j].rollNo > students[j + 1].rollNo) {
                 swap(students[j], students[j + 1]);
             }
@@ -144,7 +144,7 @@ void StudentSystem::sortStudents() {
     }
 
     cout << "\n===== SORTED STUDENTS =====\n\n";
-    for (int i = 0; i < students.size(); i++) {
+    for (size_t i = 0; i < students.size(); i++) {
         cout << "Roll No    : " << students[i].rollNo << endl;
         cout << "Name       : " << students[i].name << endl;
         cout << "Department : " << students[i].department << endl;

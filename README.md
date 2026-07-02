@@ -1,73 +1,101 @@
+# Student Management System (C++) 🎓
 
-# Student Management System (C++)
+A console-based Student Management System built in C++, demonstrating practical use of core **Data Structures** — linked lists, stacks, and queues — alongside modular OOP design.
 
-A comprehensive, console-based Student Management System built in C++. This project demonstrates the practical application of fundamental **Data Structures** and **Modular Programming** principles to create, manage, and manipulate student records efficiently.
+---
 
-## 🚀 Features
+## ✨ Features
 
-* **Add Students:** Store detailed student profiles including Roll Number, Name, Department, Semester, CGPA, and Contact Number.
-* **Display Records:** View all currently enrolled students in a clean, formatted list.
-* **Search Engine:** Quickly locate a specific student by their Roll Number using an optimized Linear Search.
-* **Delete Records:** Remove students from the active database.
-* **Undo Delete:** Accidentally deleted a student? Instantly restore the most recently deleted profile.
-* **Registration Waiting List:** Add pending students to a queue and process their official enrollment sequentially.
-* **Sort Students:** View the student list sorted numerically by their Roll Number.
+- **Add Students** — Store Roll Number, Name, Department, Semester, CGPA, and Contact Number
+- **Display Records** — View all enrolled students in a formatted list
+- **Search** — Locate a student instantly by Roll Number (Linear Search)
+- **Delete Records** — Remove a student from the active database
+- **Undo Delete** — Restore the most recently deleted student (Stack-powered)
+- **Registration Queue** — Add pending students to a queue and enrol them sequentially (Queue-powered)
+- **Sort Students** — View the list sorted numerically by Roll Number (Bubble Sort)
 
-## 🧠 Data Structures Utilized
+---
 
-This project acts as a practical implementation of several core computer science data structures:
+## 🧠 Data Structures Used
 
-* **Singly Linked List:** Acts as the primary dynamic database. It allows the system to scale infinitely without the fixed-size limitations of standard arrays.
-* **Stack (LIFO):** Powers the "Undo Delete" feature by pushing deleted nodes onto a stack and popping them back into the main list when restored.
-* **Queue (FIFO):** Handles the "Registration Queue" feature, ensuring students are processed and enrolled in the exact order they applied.
-* **Vectors & Bubble Sort:** Used temporarily to gather and sort student records for ordered display without disrupting the main linked list structure.
+| Structure | Purpose |
+|---|---|
+| **Singly Linked List** | Primary dynamic database — scales without fixed-size limits |
+| **Stack (LIFO)** | Powers the Undo Delete feature |
+| **Queue (FIFO)** | Handles the Registration Queue in arrival order |
+| **Vector + Bubble Sort** | Temporary sorted view without disrupting the main list |
+
+---
+
+## 💻 Tech Stack
+
+- **Language:** C++17
+- **Paradigm:** Object-Oriented Programming + Data Structures
+- **Build:** GNU Make / CMake
+- **Compiler:** GCC / G++ (any modern C++ compiler)
+
+---
 
 ## 📂 Project Structure
 
-The project follows standard C++ modular architecture, separating declarations from implementations for cleaner, more scalable code:
+```
+Student-Management-System/
+├── include/
+│   ├── Student.h           # Student class and linked list Node definition
+│   └── StudentSystem.h     # StudentSystem class declaration
+├── src/
+│   ├── main.cpp            # Entry point and interactive menu
+│   └── StudentSystem.cpp   # Full implementation (add, delete, sort, search, etc.)
+├── build/                  # Compiled output (git-ignored)
+├── Makefile                # Build via `make`
+├── CMakeLists.txt          # Build via CMake
+└── README.md
+```
 
-* `Student.h`: Contains the foundational `Student` class and the Linked List `Node` class.
-* `StudentSystem.h`: The header file declaring the `StudentSystem` class, its variables, and function prototypes.
-* `StudentSystem.cpp`: The core logic file containing the implementation of all system functions (adding, deleting, sorting, etc.).
-* `main.cpp`: The entry point of the program that handles the interactive user menu and input/output.
+---
 
-## 🛠️ How to Compile and Run
+## 🚀 Getting Started
 
-To run this project on your local machine, you will need a standard C++ compiler (like GCC).
-
-**1. Clone the repository:**
-
+**Clone the repository**
 ```bash
-git clone https://github.com/YourUsername/YourRepositoryName.git
-cd YourRepositoryName
-
+git clone https://github.com/alphaxt/Student-Management-System.git
+cd Student-Management-System
 ```
 
-**2. Compile the modular files together:**
-
+**Build with Make**
 ```bash
-g++ main.cpp StudentSystem.cpp -o StudentApp
-
+make
+./build/StudentApp
 ```
 
-**3. Run the executable:**
-
-* **On Windows:**
-```cmd
-StudentApp.exe
-
-```
-
-
-* **On macOS / Linux:**
+**Build with CMake**
 ```bash
-./StudentApp
-
+cmake -B build -S .
+cmake --build build
+./build/StudentApp
 ```
 
+**Build manually with g++**
+```bash
+g++ -std=c++17 -Iinclude -o build/StudentApp src/main.cpp src/StudentSystem.cpp
+./build/StudentApp
+```
 
+---
 
 ## 🔮 Future Enhancements
 
-* Implement File Handling (`<fstream>`) to save and load student records persistently across sessions.
-* Add input validation to prevent program crashes if a user enters a letter instead of a number.
+- File handling (`<fstream>`) to persist records across sessions
+- Input validation to handle non-numeric entries gracefully
+- Binary Search Tree for O(log n) student lookup
+- Multi-department filtering and reporting
+
+---
+
+## 📜 License
+
+This project does not currently include a license file. To open-source it, add an [MIT License](https://choosealicense.com/licenses/mit/).
+
+---
+
+**Developed by Muhammad Danish**
